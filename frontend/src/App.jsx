@@ -1,6 +1,7 @@
-
+import React from "react";
 import { useEffect, useState } from "react";
 import { getEmployees, addEmployee, deleteEmployee, getAttendance, markAttendance } from "./api";
+
 
 function App() {
   const [employees, setEmployees] = useState([]);
