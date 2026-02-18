@@ -1,4 +1,4 @@
-
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, EmailStr
 from typing import List
@@ -7,6 +7,13 @@ from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 from datetime import date
 
 app = FastAPI(title="HRMS Lite API")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all origins for demo/assignment
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 DATABASE_URL = "sqlite:///./hrms.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
