@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:8000";
+const API_URL = "https://hrms-lite-backend.onrender.com";
 
 export async function getEmployees() {
   const res = await fetch(`${API_URL}/employees`);
